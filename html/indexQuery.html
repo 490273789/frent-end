@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div >
+    <span data-row-key=38410 >
+      ceshi1
+    </span> 
+  </div>
+  <div data-row-key=38411 >ceshi2 </div>
+  <div data-row-key=38412 >ceshi3 </div>
+  <script>
+    const num = '38410'
+    const str = `div span[data-row-key="${num}"]`
+    const str1 = `div span[data-row-key=${num}]`
+    console.log(str) // div span[data-row-key="38410"]
+    console.log(str1) // div span[data-row-key=38410]
+    const div = document.querySelector(`div span[data-row-key="${num}"]`)
+    console.log(div)
+  </script>
+</body>
+</html>
