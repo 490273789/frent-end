@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <input type="text" class="input">
+  <div class="btn">click</div>
+  <script>
+
+    const oInput = document.querySelector('.input')
+    const oBtn = document.querySelector('.btn')
+    // 事件执行顺序：mousedown -> blur -> click
+    oInput.addEventListener('blur', () => {
+      console.log('blur')
+    })
+
+    oBtn.addEventListener('mousedown', (e) => {
+      e.preventDefault()  // 
+      console.log('mouseDown')
+    })
+
+
+    oBtn.addEventListener('click', () => {
+      console.log('click')
+    })
+
+    const a = setTimeout(() => {},0)
+    const b = setTimeout(() => {},0)
+    console.log(a)
+    console.log(b)
+  </script>
+
+</body>
+</html>

@@ -20,13 +20,11 @@ const isSameTree = (root1, root2) => {
 // 翻转二叉树 - 将左节点和右节点未知互换
 const invertTree = (root) => {
   const traversal = (node) => {
-    if(node === null) return null
+    if (node === null) return null;
     else {
-      [node.left, node.right] = [traversal(node.right), traversal(node.left)]
+      [node.left, node.right] = [traversal(node.right), traversal(node.left)];
     }
-
-    return node
-  }
-  return traversal(root)
-}
-
+    return node;
+  };
+  return traversal(root);
+};

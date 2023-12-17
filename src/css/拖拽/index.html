@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        width: 40px;
+        height: 15px;
+        cursor: pointer;
+        background-color: #9966ff;
+      }
+      .margin {
+        margin-bottom: 100px;
+      }
+
+      table,
+      td {
+        border: 1px solid #333;
+      }
+
+      thead,
+      tfoot {
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div draggable="true" class="item"></div>
+
+      <div class="margin"></div>
+      <table droppable="true">
+        <thead>
+          <tr>
+            <th>星期1</th>
+            <th>星期2</th>
+            <th>星期3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      const container = document.querySelector("#container");
+
+      container.ondragstart = (e) => {
+        e.dataTransfer.effectAllowed = "copy";
+        console.log("start", e.target);
+      };
+
+      container.ondragover = (e) => {
+        e.preventDefault();
+        // console.log("over", e.target);
+      };
+
+      container.ondragenter = (e) => {
+        console.log("enter", e.target);
+      };
+
+      container.ondrop = (e) => {
+        console.log("ondrop", e.target);
+      };
+    </script>
+  </body>
+</html>
