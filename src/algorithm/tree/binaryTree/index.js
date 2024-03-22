@@ -65,7 +65,7 @@ const levelOrder = (root) => {
 
 console.log(levelOrder(n1));
 
-// 前、中、后
+// 先序遍历 根节点-左节点-右节点
 const preOrder = (root) => {
   const result = [];
   const dfs = (node) => {

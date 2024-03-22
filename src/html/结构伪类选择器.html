@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        height: 10px;
+        background-color: aliceblue;
+        margin-bottom: 20px;
+      }
+      /* .item:last-child {
+        height: 50px;
+        background-color: #9966ff;
+      } */
+      /* nth-child(n) 这个n是从1开始计算*/
+      /* nth-child(2n + 1) 公式中的n是从0开始计算*/
+      .item:nth-child(1) {
+        height: 50px;
+        background-color: #ff9966;
+      }
+      .item:nth-last-child(n + 3) {
+        height: 50px;
+        background-color: #9966ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </body>
+</html>
