@@ -58,6 +58,7 @@ class BST<T> {
     console.log("先序遍历：", arr);
   }
 
+  /** 中序遍历 */
   inOrderTraverse() {
     const arr = [];
     const loop = (root) => {
@@ -70,6 +71,7 @@ class BST<T> {
     console.log("中序遍历：", arr);
   }
 
+  /** 后序遍历 */
   postOrderTraverse() {
     const arr = [];
     const loop = (root) => {
@@ -82,8 +84,22 @@ class BST<T> {
     console.log("后序遍历：", arr);
   }
 
-  levelOrderTraverse() {}
+  /** 层序遍历 */
+  levelOrderTraverse(): T[] {
+    const result = [];
+    const queue = [];
+    queue.push(this.root);
 
+    while (queue.length) {
+      const current = queue.shift();
+      result.push(current.value);
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
+    }
+    return result;
+  }
+
+  /** 获取最大值 */
   maxValue(): T | null {
     let rightNode = this.root;
     while (rightNode && rightNode.right) {
@@ -92,6 +108,7 @@ class BST<T> {
     return rightNode.value ?? null;
   }
 
+  /** 获取最小值 */
   minValue(): T | null {
     let leftNode = this.root;
     while (leftNode && leftNode.left) {
@@ -101,6 +118,7 @@ class BST<T> {
     return leftNode.value ?? null;
   }
 
+  /** 查询是否存在 */
   search(value: T): boolean {
     let current = this.root;
     while (current) {
@@ -110,6 +128,14 @@ class BST<T> {
     }
     return false;
   }
+
+  /** 删除节点
+   * 1. 节点不存在
+   * 2. 节点是叶子节点
+   * 3. 节点有一个子节点
+   * 4. 节点有两个子节点
+   */
+  remove() {}
 }
 
 const bst = new BST<number>();
