@@ -1,11 +1,10 @@
-
 const handleMaxValue = (value) => {
-  return Math.ceil(value / 100) * 100
-}
-console.log('360', handleMaxValue(360))
-console.log('18',handleMaxValue(18))
-console.log('154', handleMaxValue(154))
-console.log('13840',handleMaxValue(13840))
+  return Math.ceil(value / 100) * 100;
+};
+console.log("360", handleMaxValue(360));
+console.log("18", handleMaxValue(18));
+console.log("154", handleMaxValue(154));
+console.log("13840", handleMaxValue(13840));
 
 /**
  * 获取canvas绘图上下文
@@ -13,7 +12,7 @@ console.log('13840',handleMaxValue(13840))
  */
 const canvas = document.getElementById("canvas");
 const context = canvas?.getContext("2d");
-context.translate(0, 200)
+context.translate(0, 200);
 
 //绘图配置
 let options = {
@@ -35,7 +34,6 @@ let options = {
 
 drawBarChart(options);
 
-
 // 要分为几份 - 可以写死
 let num = 4;
 // 数据最大值 - 接口那
@@ -43,15 +41,14 @@ const max = 200;
 // 数据的拆分范围
 const itemRange = max / num;
 // x轴的展示的label
-const xAxisLabel = []
+const xAxisLabel = [];
 // 从零开始
 let item = 0;
-while(num-- >= 0) {
-    xAxisLabel.push(item)
-    item += itemRange
+while (num-- >= 0) {
+  xAxisLabel.push(item);
+  item += itemRange;
 }
-console.log(xAxisLabel)
-
+console.log(xAxisLabel);
 
 /**
  * 绘制柱状图
@@ -92,7 +89,7 @@ function drawXLabels(options) {
   labels.forEach(function (label, index) {
     //绘制坐标文字
     let offset = context.measureText(label).width;
-    console.log('offset:',offset);
+    console.log("offset:", offset);
     // 坐标文字的颜色
     context.strokeStyle = "#eaeaea";
     // 坐标文字的大小
@@ -101,7 +98,7 @@ function drawXLabels(options) {
     context.fillText(
       label,
       options.chartZone[0] + index * gap - offset / 2,
-      options.chartZone[1] - 5
+      options.chartZone[1] - 5,
     );
     //绘制辅助线
     context.beginPath();
@@ -110,15 +107,9 @@ function drawXLabels(options) {
     // 辅助线宽度
     // context.strokeWidth = 2;
     // 辅助线起始坐标
-    context.moveTo(
-      options.chartZone[0] + index * gap,
-      options.chartZone[3]
-    );
+    context.moveTo(options.chartZone[0] + index * gap, options.chartZone[3]);
     // 辅助线终止坐标
-    context.lineTo(
-      options.chartZone[0] + index * gap,
-      options.chartZone[1]
-    );
+    context.lineTo(options.chartZone[0] + index * gap, options.chartZone[1]);
     // 绘制辅助线
     context.stroke();
   });
@@ -148,8 +139,7 @@ function drawData(options) {
     // 柱子的x轴起始点坐标
     let x0 = options.chartZone[0];
     // 柱子的y轴起始点坐标
-    let y0 =
-      options.chartZone[0] + (index + 1) * gap - options.barStyle.height / 2;
+    let y0 = options.chartZone[0] + (index + 1) * gap - options.barStyle.height / 2;
     // 绘制柱子（x, y, 宽度, 高度）
     context.fillRect(x0, y0, width, height);
     // 绘制Label

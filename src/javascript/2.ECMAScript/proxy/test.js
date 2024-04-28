@@ -1,23 +1,25 @@
-function joinName(first, last) {
-  return first + last;
-}
+const obj = {
+  name: "wsn",
+  hobby: ["football"],
+  family: [{ name: "wsr", age: 10 }],
+  child: { sex: "男" },
+};
 
-const proxy = new Proxy(joinName, {
-  /**
-   * 拦截函数的调用
-   * @param {*} target 目标函数
-   * @param {*} thisArg 被调用时的赏上下文对象
-   * @param {*} argumentList 被调用时的参数数组
-   * @returns 可返回任意值
-   */
-  apply(target, thisArg, argumentList) {
-    console.log("preventExtensions 劫持");
-    console.log("target:", target, "thisArg:", thisArg);
-    console.log("argumentList:", argumentList);
-    return Reflect.apply(target, thisArg, argumentList) + "你被劫持啦";
+const proxy = new Proxy(obj, {
+  get(target, prop) {
+    console.log("target:", target);
+    console.log("prop:", prop);
+    return Reflect.get(target, prop);
+  },
+  set(target, prop) {
+    console.log("target", target);
+    console.log("prop:", prop);
+    return Reflect.set(target, prop);
   },
 });
 
-// 触发 apply 劫持
-console.log(joinName("Q", "HY")); // QHY
-console.log(proxy("Q", "HY")); // QHY你被劫持啦
+// proxy.name;
+// proxy.child.sex;
+// proxy.family[0].name;
+proxy.child.sex = "女";
+console.log(proxy);
