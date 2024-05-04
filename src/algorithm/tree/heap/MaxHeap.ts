@@ -33,7 +33,7 @@ class MaxHeap<T> {
    * @returns 父节点索引
    */
   #parent(index: number): number {
-    return (index - 1) >> 1;
+    return Math.floor((index - 1) >> 1);
   }
 
   /** 打印当前的堆 */
@@ -97,8 +97,8 @@ class MaxHeap<T> {
       let l = this.#left(index),
         r = this.#right(index);
       let max = index; // 最大值的索引
-      if (this.#maxHeap[l] > this.#maxHeap[max]) max = l;
-      if (this.#maxHeap[r] > this.#maxHeap[max]) max = r;
+      if (l < this.size && this.#maxHeap[l] > this.#maxHeap[max]) max = l;
+      if (r < this.size && this.#maxHeap[r] > this.#maxHeap[max]) max = r;
       if (max === index) break;
       this.#swap(index, max);
       index = max;
