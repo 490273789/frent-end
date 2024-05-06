@@ -5,7 +5,7 @@ class MaxHeap<T> {
 
   constructor(numbers: number[]) {
     this.#maxHeap = numbers === undefined ? [] : [...numbers];
-    for (let i = this.#maxHeap[this.#parent(this.size - 1)]; i >= 0; i--) {
+    for (let i = this.#parent(this.size - 1); i >= 0; i--) {
       this.#siftDown(i);
     }
   }
@@ -33,7 +33,7 @@ class MaxHeap<T> {
    * @returns 父节点索引
    */
   #parent(index: number): number {
-    return Math.floor((index - 1) >> 1);
+    return Math.floor((index - 1) / 2);
   }
 
   /** 打印当前的堆 */
@@ -136,6 +136,8 @@ class MaxHeap<T> {
 
 const arr = [9, 8, 10, 30, 2, 7, 4, 13, 1, 5, 21, 3];
 const maxHeap = new MaxHeap(arr);
-// maxHeap.pop();
+maxHeap.pop();
 maxHeap.push(18);
 maxHeap.print;
+
+export {};
