@@ -37,9 +37,6 @@ const minHeapSort = (arr) => {
   // 排序
   let lastIndex = arr.length - 1;
   while (lastIndex >= 0) {
-    // const temp = arr[0];
-    // arr[0] = arr[lastIndex];
-    // arr[lastIndex] = temp;
     [arr[0], arr[lastIndex]] = [arr[lastIndex], arr[0]];
     siftDown(arr, 0, --lastIndex);
   }

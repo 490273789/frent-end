@@ -1,6 +1,7 @@
 /** 最大堆的实现 */
 
 class MaxHeap<T> {
+  /** 队列 */
   #maxHeap = [];
 
   constructor(numbers: number[]) {
