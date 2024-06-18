@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .wrap {
+        margin-top: 200px;
+        margin-left: 100px;
+      }
+
+      .element2 {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid #99ff66;
+      }
+      .child2 {
+        position: absolute;
+        top: 30px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #99ff66;
+      }
+      .element3 {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid #ff6699;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="element1">
+        <div class="child1"></div>
+        <div>121212121212121212121212121212121212121212121212</div>
+        <div>1212</div>
+        <div>1212</div>
+        <div>1212</div>
+        <div>1212</div>
+        <div>1212</div>
+        <div>1212</div>
+        <div>1212</div>
+        <div>1212</div>
+        <div>1212</div>
+        <div>1212</div>
+        <div>1212</div>
+      </div>
+      <div class="element2">
+        <div class="child2"></div>
+      </div>
+      <div class="element3"></div>
+    </div>
+
+    <script>
+      const ele1 = document.getElementsByClassName("element1")[0];
+      const child1 = document.getElementsByClassName("child1")[0];
+      const ele2 = document.getElementsByClassName("element2")[0];
+      const child2 = document.getElementsByClassName("child2")[0];
+      const ele3 = document.getElementsByClassName("element3")[0];
+
+      // HTMLElement.offsetHeight
+      // padding + border + content
+      // offsetHeight - 相对于父的高度
+      // offsetWidth - 相对于父的宽度
+      // offsetLeft - 相对于父的左边距离
+      // offsetTop - 相对于父的顶部距离
+      console.log("offset:-----------");
+      console.log("offsetHeight", ele1.offsetHeight);
+      // padding + border + content + 滚动条高度
+      console.log("offsetWidth", ele1.offsetWidth);
+      // 节点的左边界偏移的像素值。
+      console.log("offsetLeft", ele1.offsetLeft);
+      console.log("offsetTop", ele1.offsetTop);
+
+      console.log("child1:-----------");
+      // 返回一个指向最近的（指包含层级上的最近）包含该元素的定位元素或者最近的 table,``td,``th,``body元素
+      console.log("offsetParent", child1.offsetParent);
+      //它返回当前元素相对于其 offsetParent 元素的顶部内边距的距离。
+      console.log("offsetLeft", child1.offsetLeft);
+      console.log("offsetTop", child1.offsetTop);
+
+      console.log("child2:-----------");
+      console.log("offsetParent", child2.offsetParent);
+      console.log("offsetLeft", child2.offsetLeft);
+      console.log("offsetTop", child2.offsetTop);
+
+      // Element.clientHeight
+      // 对于没有定义 CSS 或者内联布局盒子的元素为 0
+      // padding + content
+      console.log("client:-----------");
+      console.log("clientHeight", ele1.clientHeight);
+      console.log("clientWidth", ele1.clientWidth);
+      console.log("clientLeft", ele1.clientLeft);
+      console.log("clientTop", ele1.clientTop);
+
+      // Element.scrollHeight
+      // content + padding + ::before + ::after(滚动区域的高度)
+      // 判断元素是否能滚动 window.getComputedStyle(element).overflowY === 'visible'
+      console.log("scroll:-----------");
+      console.log("scrollHeight", ele1.scrollHeight);
+      console.log("scrollWidth", ele1.scrollWidth);
+      console.log("scrollLeft", ele1.scrollLeft);
+      console.log("scrollWidth", ele1.scrollWidth);
+
+      console.log("offsetHeight", ele2.offsetHeight);
+      console.log("clientHeight", ele2.clientHeight);
+      console.log("scrollHeight", ele2.scrollHeight);
+
+      // element.scroll(x-coord, y-coord) 给定的元素中滚动到某个特定坐标
+      // ie不兼容
+
+      // element.scrollBy(x-coord, y-coord); 使得元素滚动一段特定距离
+      // ie不兼容
+
+      // element.scrollTo(x-coord, y-coord) 方法可以使界面滚动到给定元素的指定坐标位置
+      // ie不兼容
+
+      // Window.pageXOffset是scrollX 的别名 返回文档/页面水平方向滚动的像素值。
+      // 请使用 window.pageXOffset 代替 window.scrollX  旧版本的 IE（<9）两个属性都不支持
+      // 完整的兼容性代码如下
+      var y =
+        window.pageYOffset !== undefined
+          ? window.pageYOffset
+          : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+      // Window.screenX 它返回浏览器左边框到左边屏幕边缘的 CSS 像素数
+    </script>
+  </body>
+</html>

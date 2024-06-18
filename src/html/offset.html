@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .wrap {
+        padding: 20px 10px;
+        border: 1px solid #ff9966;
+        position: absolute;
+      }
+      .scroll {
+        width: 100px;
+        height: 200px;
+        padding: 10px;
+        border: 1px solid #9966ff;
+        overflow: auto;
+      }
+      .item {
+        width: 40px;
+        height: 20px;
+        line-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="scroll">
+        <div class="item">text11212121212111</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+        <div class="item">text</div>
+      </div>
+    </div>
+
+    <script>
+      const oScroll = document.getElementsByClassName("scroll")[0];
+      const oItem = document.getElementsByClassName("item")[1];
+
+      // offsetHeight/offsetWidth 元素像素的高度，包括元素的内容 + 边框 + 内边距 + 元素的水平滚动条，不包含:before 或:after 等伪类元素的高度。
+      // offsetParent 返回一个指向最近的（指包含层级上的最近）包含该元素的定位元素或者最近的 table, td, th, body 元素
+      // offsetTop 元素顶部距离最近的有定位的父级元素顶部的距离
+      // offsetLeft 元素左边距离最近的有定位的父级元素左边的距离
+
+      // 共性
+      // 1、如果元素被隐藏，则返回0
+      // 2、这个属性值会被四舍五入为整数值
+      // 3、只读属性
+      console.log("-----offset-----");
+      console.log(
+        "[ offsetHeight: content: 200 + padding: 20 + border: 2 ] >",
+        oScroll.offsetHeight,
+      );
+      console.log("[ offsetWidth: content: 100 + padding: 20 + border: 2 ] >", oScroll.offsetWidth);
+      console.log("[ offsetParent ] >", oScroll.offsetParent);
+      console.log("[ offsetTop ] >", oScroll.offsetTop);
+      console.log("[ offsetLeft ] >", oScroll.offsetLeft);
+
+      // clientHeight padding + height - 水平滚动条高度 不包含 border 和 水平滚动条
+      // clientLeft border + 滚动条宽度
+      console.log("-----client-----");
+      console.log("[ clientHeight: ] >", oScroll.clientHeight);
+      console.log("[ clientLeft ] >", oScroll.clientLeft);
+
+      // scrollHeight 计算方式同clientHeight，但是包含为元素的高度
+      console.log("[ scrollHeight ] >", oScroll.scrollHeight);
+      const onScroll = (e) => {
+        console.log("[ e ] >", e);
+        console.log("[ scrollTop ] >", oScroll.scrollTop);
+      };
+      oScroll.addEventListener("scroll", onScroll);
+      console.log("[ scrollTop ] >", oScroll.scrollTop);
+    </script>
+  </body>
+</html>
