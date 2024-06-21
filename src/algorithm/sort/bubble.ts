@@ -17,7 +17,7 @@ const bubbleSort = (target: number[]) => {
         [arr[second - 1], arr[second]] = [arr[second], arr[second - 1]];
       }
     }
-    if (lock) return arr;
+    if (lock) break;
   }
   return arr;
 };

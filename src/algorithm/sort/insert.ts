@@ -8,16 +8,18 @@ const insertSort = (target: number[]) => {
   if (target.length < 2) return arr;
   const n = target.length;
   for (let base = 1; base < n; base++) {
-    let num = arr[base];
+    let item = arr[base];
     let i = base - 1;
-    while (i > 0 && arr[i] > num) {
+    while (i >= 0 && arr[i] > item) {
+      arr[i + 1] = arr[i];
       i--;
     }
-    i !== base - 1 && ([arr[i], arr[base]] = [arr[base], arr[i]]);
+    arr[i + 1] = item;
   }
-
   return arr;
 };
 
 const testArr = [9, 4, 8, 5, 6, 1];
 console.log("[ insertSort(testArr) ] >", insertSort(testArr));
+
+export default {};
