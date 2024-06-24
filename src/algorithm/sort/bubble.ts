@@ -9,7 +9,6 @@ const bubbleSort = (target: number[]) => {
   if (target.length < 2) return arr;
   const n = arr.length;
   for (let end = n - 1; end >= 0; end--) {
-    console.log("[ end ] >", end);
     let lock = true;
     for (let second = 1; second <= end; second++) {
       if (arr[second - 1] > arr[second]) {

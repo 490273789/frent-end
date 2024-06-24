@@ -5,7 +5,7 @@
 
 // 时间复杂度O(n²)
 
-const selectOrder = (target: number[]) => {
+const selectOrder1 = (target: number[]) => {
   const arr = [...target];
   if (arr.length < 2) return arr;
   const n = arr.length - 1;
@@ -20,7 +20,22 @@ const selectOrder = (target: number[]) => {
   return arr;
 };
 
+const selectOrder2 = (target: number[]) => {
+  const arr = [...target];
+  if (arr.length < 2) return arr;
+  const n = arr.length;
+  for (let base = 1; base < n; base++) {
+    let current = base;
+    while (current >= 0 && arr[current] < arr[current - 1]) {
+      [arr[current], arr[current - 1]] = [arr[current - 1], arr[current]];
+      current--;
+    }
+  }
+  return arr;
+};
+
 const testArr = [7, 2, 6, 5, 7, 3, 9, 1];
-console.log("[ selectOrder(testArr) ] >", selectOrder(testArr));
+console.log("[ selectOrder1(testArr) ] >", selectOrder1(testArr));
+console.log("[ selectOrder2(testArr) ] >", selectOrder2(testArr));
 
 export default {};
