@@ -44,8 +44,8 @@ const selectSort = (target) => {
 const arr1 = [9, 7, 8, 3, 4, 1, 5, 2];
 console.log("[ selectSort(arr1) ] >", selectSort(arr1));
 
-// 0 ~ n -1
-// 0 ~ n -2
+// 0 ~ n - 1
+// 0 ~ n - 2
 const bubbleSort = (target) => {
   const arr = [...target];
   if (arr === undefined || arr.length < 2) return arr;

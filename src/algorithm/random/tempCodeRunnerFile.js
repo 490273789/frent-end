@@ -1,13 +1,9 @@
-const getPowerRandom = () => Math.max(Math.random(), Math.random());
-
-const testPowerRandom = (k) => {
-  const times = 10000;
-  let count = 0;
-  for (let i = 0; i < times; i++) {
-    if (getPowerRandom() < k) count++;
+const sort = (arr) => {
+  const length = arr.length;
+  if (length < 2) return true;
+  for (let i = 0; i < length - 1; i++) {
+    if (arr[i] > arr[i + 1]) return false;
   }
-  console.log("[ getPowerRandom() ] >", count / times);
-  console.log("[ getPowerRandom ] >", Math.pow(k, 2));
+  return true;
 };
-
-testPowerRandom(0.7);
+console.log("[ sort ] >", sort([1, 2, 3, 5, 4]));

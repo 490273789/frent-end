@@ -14,7 +14,7 @@ const accumulate = (arr) => {
   return result;
 };
 
-// step2：根据上衣的结果计算前i项的和
+// step2：根据上面的结果计算前i项的和
 // 第 0 ～ 5，直接就是 第5项的数据
 // 第 2～ 5 用第[0,5] - [0,1] result[5] - result[1]
 const accumulateArr = accumulate([1, 2, 3, 4, 5]);

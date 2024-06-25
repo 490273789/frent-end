@@ -57,7 +57,3 @@ const testPowerRandom = (k) => {
 };
 
 testPowerRandom(0.7);
-
-// 从1 ～ 5随机到1 ～ 7 随机
-// 从a ～ b随机到c ～ d 随机
-// 01不等概率随机到01等概率随机
