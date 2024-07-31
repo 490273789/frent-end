@@ -24,6 +24,7 @@ const siftDown = (arr, startIndex, endIndex) => {
 const buildMinHeap = (arr) => {
   if (arr.length < 2) return;
   // 找到最后一个叶子节点的父节点
+  // 所有的叶子节点都已经是堆化完成的
   const startIndex = Math.floor((arr.length - 1) / 2);
   // 堆序化
   for (let i = startIndex; i >= 0; i--) {

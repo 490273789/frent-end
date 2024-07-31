@@ -13,17 +13,24 @@ class MHeap<T> {
     console.log("heap:", this.#heap);
   }
 
+  /** 左子节点 i 乘 2 加 1 */
   #left(index: number) {
     return (index << 1) + 1;
   }
 
+  /** 右子节点 i 乘 2 加 2 */
   #right(index: number) {
     return (index << 1) + 2;
   }
 
+  /** (i - 1) / 2 向下取整 */
   #parent(index: number) {
     return Math.floor((index - 1) / 2);
   }
+
+  // 8
+  // 左 17  -  右 18
+  // (17 - 1) / 2  -  (18 - 1) / 2
 
   #swap(index1, index2) {
     [this.#heap[index1], this.#heap[index2]] = [this.#heap[index2], this.#heap[index1]];

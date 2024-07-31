@@ -1,7 +1,7 @@
 /** 最大堆的实现 */
 
 class MaxHeap<T> {
-  /** 队列 */
+  /** 堆 */
   #maxHeap = [];
 
   constructor(numbers: number[]) {
@@ -34,7 +34,7 @@ class MaxHeap<T> {
    * @returns 父节点索引
    */
   #parent(index: number): number {
-    return Math.floor((index - 1) / 2);
+    return index >> 1;
   }
 
   /** 打印当前的堆 */
@@ -81,8 +81,9 @@ class MaxHeap<T> {
    * @param index 当前节点的索引
    */
   #siftUp(index: number) {
+    let parent;
     while (true) {
-      const parent = this.#parent(index);
+      parent = this.#parent(index);
       if (parent < 0 || this.#maxHeap[index] <= this.#maxHeap[parent]) break;
       this.#swap(index, parent);
       index = parent;
