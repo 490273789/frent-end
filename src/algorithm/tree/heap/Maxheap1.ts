@@ -22,7 +22,7 @@ class MaxHeap {
 
   /** 获取父节点 */
   #parent(index) {
-    return index >> 1;
+    return (index - 1) >> 1;
   }
 
   get #size() {
@@ -84,3 +84,17 @@ console.log("[ maxHeap.pop() ] >", maxHeap.pop());
 maxHeap.print();
 
 export { MaxHeap };
+
+// Having a rich vocabulary is essential for any aspiring English literature writer as it illustrates their crucial
+// ambition to captivate readers and convey emotions, while avoiding annoying comments.
+// 丰富的的词汇对于任何有抱负的英语文学作家来说是必不可少的，因为它展现了他们吸引读者和传达情感的至
+// 关重要的雄心壮志，同时避免令人烦恼的评论。
+// essential adj. 基本的；必要的；本质的；-ess- tobe 存在
+// aspiring adj. 有抱负的；渴望的； -spir- breath 呼吸
+// literature n. 文学；文学作品； -liter- letter 字母
+// crucial adj. 重要的；必要的； -cruc- -crux- cross 十字
+// ambition n. 雄心；抱负； amb ambi both 两个 两边 it 走
+// captivate v. 吸引；使感到兴奋；
+// convey v. 传达；传达信息； -vey- -vi- -via- way 路
+// emotion n. 情感；情绪； e 外 -mot- -mov- -mob- move 动
+// annoy v. 使烦恼；使烦恼；-noy- -noi- 憎恨
