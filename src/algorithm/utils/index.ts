@@ -1,4 +1,4 @@
-const testOrderSearch = (fn) => {
+const testOrderSearch = (fn: Function) => {
   const MAX_LENGTH = 10000000;
   const array = new Array(MAX_LENGTH).fill(0).map((_, index) => index);
   const target = 9999999;
