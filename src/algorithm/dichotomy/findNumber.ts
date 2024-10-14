@@ -25,4 +25,4 @@ const findNum = (target: number[], number: number) => {
   return false;
 };
 
-test(findNum, testFindNum);
+test("sortRandomArray", findNum, testFindNum);

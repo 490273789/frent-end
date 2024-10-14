@@ -1,31 +1,34 @@
 // 有序数组中找到 >= num 最左的位置
-const arr = [1, 2, 2, 2, 3, 3, 5, 5, 5, 6, 6, 7];
-// 6
-const findNumLeft = (target: number[], num: number) => {
+// num = 2, 最左位置的index = 1
+// num = 3, 最左位置的index = 4
+// num = 5, 最左位置的index = 6
+// num = 7, 最左位置的index = 11
+const arr = [1, 2, 2, 2, 3, 3, 5, 5, 5, 6, 6, 7, 8];
+
+const findNumLeftIndex = (target: number[] = [], num: number) => {
   const length = target.length;
   if (length === 0) return -1;
   const arr = [...target];
-  let t = -1;
+  let resultIndex = -1;
   let left = 0,
     right = length - 1,
     middle = 0;
   while (left <= right) {
     middle = ((left + right) / 2) | 0;
     if (arr[middle] >= num) {
-      t = middle;
+      resultIndex = middle;
       right = middle - 1;
     } else {
-      // num < item;
       left = middle + 1;
     }
-    console.log("[ middle,item,left,right ] >", middle, arr[middle], left, right);
   }
-  return t;
+  return resultIndex;
 };
-console.log("[ findNumLeft(arr, 7) ] >", findNumLeft(arr, 7));
+console.log("[ findNumLeftIndex(arr, 7) ] >", findNumLeftIndex(arr, 7));
 // >= 2的最左位置就是index = 1的位置
+
 // 有序数组中找到 <= num 最右的位置
-const findNumRight = (target: number[], num: number) => {
+const findNumRightIndex = (target: number[], num: number) => {
   const length = target.length;
   if (length === 0) return -1;
   const arr = [...target];
@@ -47,4 +50,4 @@ const findNumRight = (target: number[], num: number) => {
 
   return t;
 };
-console.log("[ findNumRight ] >", findNumRight([5, 5, 5, 5], 5));
+console.log("[ findNumRight ] >", findNumRightIndex([5, 5, 5, 5], 5));
