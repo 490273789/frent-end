@@ -3,8 +3,9 @@
 // 用第一位与第二位比较，如果第一位比第二位大，则交换位置
 // 第二位与第三位比较，如果第二位比第三位大，则交换位置，以此类推比较第n 为 与n - 1位
 // 第一遍比较完后可以确定第n位已经是最大，下一次可以不用比较
+// 这个复杂度是个等差数列，取最高阶项
 // 时间复杂度： O(n²)
-const bubbleSort = (target: number[]) => {
+const bubbleSort = (target: number[] = []) => {
   const arr = [...target];
   if (target.length < 2) return arr;
   const n = arr.length;

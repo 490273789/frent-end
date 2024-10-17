@@ -81,7 +81,7 @@ class MaxHeap {
 const maxHeap = new MaxHeap([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
 // maxHeap.push(11);
 console.log("[ maxHeap.pop() ] >", maxHeap.pop());
-maxHeap.print();
+maxHeap.print(); 
 
 export { MaxHeap };
 

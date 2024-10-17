@@ -2,13 +2,14 @@ class Node<T> {
   value: T;
   next: Node<T> | null;
 
-  constructor(value: T) {
+  constructor(value: T, next: Node<T> | null = null) {
     this.value = value;
+    this.next = next;
   }
 }
 
 class LinkedList<T> {
-  head: Node<T> | null;
+  head!: Node<T> | null;
   private size = 0;
 
   get length(): number {
@@ -41,13 +42,13 @@ class LinkedList<T> {
     if (!this.head) {
       this.head = newNode;
     } else {
-      let current = this.head;
+      let current: Node<T> | null = this.head;
       let preCurrent: Node<T> | null;
       while (current) {
         preCurrent = current;
         current = current.next;
       }
-      preCurrent.next = newNode;
+      preCurrent!.next = newNode;
     }
     this.size++;
   }
@@ -60,8 +61,8 @@ class LinkedList<T> {
       this.head = newNode;
     } else {
       const preNode = this.getPosition(position - 1);
-      newNode.next = preNode.next;
-      preNode.next = newNode;
+      newNode.next = preNode!.next;
+      preNode!.next = newNode;
     }
     this.size++;
     return true;
@@ -69,22 +70,24 @@ class LinkedList<T> {
 
   removeAt(position: number): Node<T> | null {
     if (position < 0 || position >= this.size) return null;
-    let current: Node<T>;
+    let current: Node<T> | null;
     if (position === 0) {
-      current = this.head.next;
+      current = this.head!.next;
       this.head = this.head?.next?.next ?? null;
     } else {
       const preNode = this.getPosition(position - 1);
-      current = preNode.next;
-      preNode.next = preNode.next.next;
+      current = preNode!.next;
+      preNode!.next = preNode!.next!.next;
     }
     return current;
   }
 
   /** 更新position位置的值 */
-  update(position, value) {
+  update(position: number, value: T) {
     const current = this.getPosition(position);
-    current.value = value;
+    if (current !== null) {
+      current.value = value;
+    }
     return current;
   }
 
@@ -122,3 +125,4 @@ console.log(linkList.indexOf("2"));
 // 1. 设计一个链表
 // 2. 237 删除链表中的节点
 // 3. 206 反转链表 迭代和递归两种方法
+export default {};

@@ -1,6 +1,11 @@
-import { generateRandomArray } from "../utils/random";
+import { generateRandomArray, generateSortRandomArray } from "../utils/random";
 
 type fn = (arr: number[], number: number) => boolean;
+
+const algorithmMap = {
+  randomArray: generateRandomArray,
+  sortRandomArray: generateSortRandomArray,
+};
 
 /**
  * 对数器
@@ -10,10 +15,17 @@ type fn = (arr: number[], number: number) => boolean;
  * @param maxSize 数组最大长度
  * @param maxValue 数组最大值
  */
-const test = (fn: fn, testFn: fn, testTime = 10000, maxSize = 10, maxValue = 100) => {
+const test = (
+  algorithm: keyof typeof algorithmMap,
+  fn: fn,
+  testFn: fn,
+  testTime = 10000,
+  maxSize = 10,
+  maxValue = 100,
+) => {
   let succeed = true;
   for (let i = 0; i < testTime; i++) {
-    const arr = generateRandomArray(maxSize, maxValue);
+    const arr = algorithmMap[algorithm](maxSize, maxValue);
     const number = Math.random() * maxValue;
     if (fn(arr, number) !== testFn(arr, number)) {
       succeed = false;
