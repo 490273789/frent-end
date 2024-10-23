@@ -3,7 +3,7 @@ export type Node<T> = {
   next: Node<T> | null;
   last?: Node<T> | null;
 };
-const createNode = <T>(value: T): Node<T> => ({
+export const createNode = <T>(value: T): Node<T> => ({
   value,
   next: null,
   last: null,
