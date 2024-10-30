@@ -1,7 +1,7 @@
 class MaxHeap {
-  #heap = [];
+  #heap: number[] = [];
 
-  constructor(arr) {
+  constructor(arr: number[]) {
     this.#heap = [...arr];
   }
 
@@ -11,17 +11,17 @@ class MaxHeap {
   }
 
   /** 获取节点的左子节点 */
-  #leftChild(index) {
+  #leftChild(index: number) {
     return (index << 1) + 1;
   }
 
   /** 获取节点的右子节点 */
-  #rightChild(index) {
+  #rightChild(index: number) {
     return (index << 1) + 2;
   }
 
   /** 获取父节点 */
-  #parent(index) {
+  #parent(index: number) {
     return (index - 1) >> 1;
   }
 
@@ -30,12 +30,12 @@ class MaxHeap {
   }
 
   /** 交换数组中的两个值 */
-  #swap(index1, index2) {
+  #swap(index1: number, index2: number) {
     [this.#heap[index1], this.#heap[index2]] = [this.#heap[index2], this.#heap[index1]];
   }
 
   /** 上滤操作，将尾部新添加的元素堆化 */
-  #siftUp(index) {
+  #siftUp(index: number) {
     let parentIndex = this.#parent(index);
     while (index > 0 && this.#heap[index] > this.#heap[parentIndex]) {
       this.#swap(index, parentIndex);
@@ -45,13 +45,13 @@ class MaxHeap {
   }
 
   /** 向数组的尾部添加一个元素 */
-  push(value) {
+  push(value: number) {
     this.#heap.push(value);
     this.#siftUp(this.#size - 1);
   }
 
   /** 执行下滤操作，重新堆化 */
-  #siftDown(index) {
+  #siftDown(index: number) {
     let leftChild = this.#leftChild(index);
     let rightChild = this.#rightChild(index);
     let lastIndex = this.#parent(this.#size - 1);
@@ -72,7 +72,7 @@ class MaxHeap {
   pop() {
     // 交换首尾两个节点
     const res = this.#heap.shift();
-    this.#heap.unshift(this.#heap.pop());
+    this.#heap.unshift(this.#heap.pop()!);
     this.#siftDown(0);
     return res;
   }
@@ -81,7 +81,7 @@ class MaxHeap {
 const maxHeap = new MaxHeap([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
 // maxHeap.push(11);
 console.log("[ maxHeap.pop() ] >", maxHeap.pop());
-maxHeap.print(); 
+maxHeap.print();
 
 export { MaxHeap };
 

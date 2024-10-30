@@ -2,7 +2,7 @@
 
 class MaxHeap<T> {
   /** 堆 */
-  #maxHeap = [];
+  #maxHeap: number[] = [];
 
   constructor(numbers: number[]) {
     this.#maxHeap = numbers === undefined ? [] : [...numbers];
@@ -132,7 +132,7 @@ class MaxHeap<T> {
     this.#swap(0, this.size - 1);
     const value = this.#maxHeap.pop();
     this.#siftDown(0);
-    return value;
+    return value!;
   }
 }
 
