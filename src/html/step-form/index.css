@@ -1,0 +1,152 @@
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #4338ca;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  max-width: 600px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  gap: 7%;
+}
+
+.form-group > div {
+  width: 100%;
+}
+
+input:not([type="checkbox"]),
+select,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+.group-two,
+.group-three {
+  display: none;
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+#navLeft,
+#navRight {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#stepInfo {
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+  }
+}
+
+/* 错误提示样式 */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0.5px solid var(--primary-color);
+}
+
+input.error,
+select.error,
+textarea.error {
+  outline: 0.5px solid red;
+}
+
+.error-message {
+  font-size: x-small;
+  color: red;
+  display: block;
+  margin-top: 2px;
+}
+
+.summary-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.summary-section p:first-child {
+  width: 30%;
+  flex-shrink: 0;
+  border-right: 1px solid var(--secondary-color);
+}
+
+.summary-section p:nth-child(2) {
+  width: 45%;
+  flex-shrink: 0;
+  padding-left: 10px;
+}
+
+.edit-btn {
+  width: 25%;
+  margin-left: auto;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 0.7px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.edit-btn:hover {
+  border: 2px solid var(--primary-color);
+  font-weight: bolder;
+  background-color: transparent;
+}
