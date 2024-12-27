@@ -12,7 +12,7 @@ const negNum = (num) => {
   return add(~num, 1);
 };
 
-// console.log(add(7, negNum(14)));
+// #console.log(add(7, negNum(14)));
 // console.log(add(28, 4));
 
 const multiply = (a, b) => {

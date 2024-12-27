@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- autocomplete：默认是on，off就不会自动填充了 -->
+    <!-- 向当前 URL 发送 GET 请求的表单 -->
+    <form action="" method="get">
+      <label> 姓名：<input name="submitted-name" autocomplete="off" /> </label>
+      <button>保存</button>
+    </form>
+
+    <!-- 向当前 URL 发送 POST 请求的表单 -->
+    <form method="post">
+      <label> 姓名：<input name="submitted-name" autocomplete="on" /> </label>
+      <button>保存</button>
+    </form>
+
+    <!-- 带有字段集（fieldset）、标题（legend）和标签（label）的表单 -->
+    <form method="post">
+      <fieldset>
+        <legend>是否同意该条款？</legend>
+        <label><input type="radio" name="radio" value="yes" />是</label>
+        <label><input type="radio" name="radio" value="no" />否</label>
+      </fieldset>
+    </form>
+  </body>
+</html>
