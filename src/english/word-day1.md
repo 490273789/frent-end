@@ -1,0 +1,134 @@
+- fragile
+  - [ˈfrædʒ(ǝ)l]
+  - adj. 易碎的；不牢固的；脆弱的
+  - frag-/fract-/fric- break 打碎
+  - -ile 形容词后缀 。。。的
+- swell
+  - [swel]
+  - v. 膨胀；肿胀
+  - n. 凸起；隆起
+  - adj. 很愉快的；极有趣的
+- feast
+  - [fiːst]
+  - n. 宴会；宴请；享受
+  - v. 享受；宴请；尽情享用（美味佳肴）
+- pretty
+  - /'prɪti/
+  - adj. 漂亮的；可爱的；优美的；
+  - adv. 相当地；很
+  - n. 漂亮的人
+- whatever
+  - [wǝtˈevǝr]
+  - adj. 无论怎样。。。都
+  - pron. 无论什么
+  - conj. 无论什么
+- treasure
+  - [ˈtreʒǝr]
+  - n. 财富；珍宝
+  - v. 珍爱；珍惜珍藏
+- show
+  - /ʃəʊ/
+  - v. 展示；表明
+  - n. 演出；展览会；表现
+- charity
+  - /ˈtʃærəti/
+  - n. 施舍；慈善团体
+  - car-/char- dear 可爱的
+  - -ity 名词后缀
+- determination
+  - /dɪˌtɜːrmɪˈneɪʃn/
+  - n. 决心；决定
+  - de- 从。。。离开/向下；加强语气；相反
+  - term-/termin- limit 界限
+  - -ion/-ation/-ition 名后 行为、动作、状态、过程、结果
+- effective
+  - /ɪˈfektɪv/
+  - adj. 有效的；生效的
+  - ef-/e-/ex- 从。。。离开/向外 同化 f钱同化为ef；浊辅音和半辅音前同化为e-
+  - fect-/fac-/fact-/fic- make，do 做，制作
+  - -ive/-ative/-itive 形后
+- dissolve
+  - /dɪˈzɑːlv/
+  - v. 溶解；解散；失控
+  - n. 叠化；淡入淡出
+  - dis- 分开，否定；相反
+  - solv-/solu = loosen 松开
+- outer
+  - /ˈaʊtər/
+  - adj. 外面的；远离中心的；外表的
+- owner
+  - /ˈoʊnər/
+  - n. 所有者；主人；物主
+- experiment
+  - /ɪkˈsperɪmənt/
+  - n. 实验；试验
+  - v. 做试验；进行实验
+  - ex-/e-/ef- 从。。。离开/向外
+  - per-/pir-/par- try 尝试
+  - -ment 名后，行为或结果
+- court
+  - [kɔːrt]
+  - n. 法院；朝廷；球场；
+  - v. 求爱；献殷勤；招致（失败，危险）
+- careless
+  - [ˈkerlǝs]
+  - adj. 粗心的；无忧无虑的；淡漠的
+  - car-/garr- 唠叨，关心
+  - less 形后 无。。。的，不。。。的
+- livestock
+  - /ˈlaɪvstɑːk/
+  - n. 家畜；牲畜
+- beyond
+  - /bɪˈjɑːnd/
+  - prep. 超出；超越
+  - adv. 在更远处；在远处
+  - n. 远处
+  - be- 使。。。成为
+  - yond- 那边
+- valley
+  - /ˈvæli/
+  - n. 流域；山谷；溪谷
+- parallel
+  - /ˈpærəlel/
+  - n. 相似之处；对比；平行线
+  - v. 平行；类似
+  - adj. 平行的；相同的；相似的
+  - para-/par- 类似
+  - all/allel/allelo other 其他
+- material
+  - /məˈtɪriəl/
+  - n. 材料，原料
+  - adj. 物质的
+  - mater-/matr- mother 母性，母亲
+- memorial
+  - /məˈmɔːriəl/
+  - n. 纪念物，纪念碑
+  - adj. 纪念的；哀悼的
+  - memor- memory 记忆
+  - -al/-ial 形容词 。。。的 一般用于名词后
+- lab
+  - /læb/
+  - n. 实验室，研究室
+- regardless
+  - /rɪˈɡɑːrdləs/
+  - adv. 不顾；不加理会
+  - adj. 不顾的；不注意的
+  - less 形后不。。。的
+- send
+  - /send/
+  - v. 发送；寄；派遣
+  - n. 上升运动
+- feeling
+  - /'filɪŋ/
+  - n. 感觉；情绪
+  - v. 感到；触摸；认为（feel的现在分词）
+  - adj. 有同情心的；有感觉的
+- string
+  - /strɪŋ/
+  - n. 弦；线；一连串
+- steal
+  - /stiːl/
+  - v. 偷；窃取
+- shopping
+  - /'ʃɑpɪŋ/
+  - n. 购物；所购买之物
