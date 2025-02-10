@@ -13,7 +13,7 @@ class ArrayStack<T> implements IStack<T> {
 
   /** 移除栈顶元素，并返回被移除的元素 */
   pop() {
-    return this.data.pop();
+    return this.data.pop() || null;
   }
 
   /** 返回栈顶元素，不对栈做任何修改 */
@@ -29,7 +29,7 @@ class ArrayStack<T> implements IStack<T> {
   /**
    * 查询栈中元素的数量，返回元素的个数
    */
-  size() {
+  get size() {
     return this.data.length;
   }
 }
@@ -41,4 +41,4 @@ arrayStack.push(3);
 console.log("peek:", arrayStack.peek());
 console.log("pop:", arrayStack.pop());
 console.log("isEmpty:", arrayStack.isEmpty());
-console.log("size:", arrayStack.size());
+console.log("size:", arrayStack.size);

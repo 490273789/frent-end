@@ -1,7 +1,10 @@
+import { INode } from "../type";
+
 export interface IStack<T> {
+  head?: INode<T> | null;
   push(element: T): void;
-  pop(): T | undefined;
-  peek(): T | undefined;
+  pop(): T | null;
+  peek(): T | null;
   isEmpty(): boolean;
-  size(): number;
+  // size(): number;
 }

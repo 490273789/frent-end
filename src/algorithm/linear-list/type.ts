@@ -3,3 +3,8 @@ export interface IList<T> {
   isEmpty(): boolean;
   size(): number;
 }
+
+export interface INode<T> {
+  value: T;
+  next: INode<T> | null;
+}
