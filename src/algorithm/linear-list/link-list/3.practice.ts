@@ -3,7 +3,7 @@
 // 1 -> 3 -> 3 -> 5 -> 7
 // 2 -> 2 -> 3 -> 3 -> 7
 // 返回 1 -> 2 -> 2-> 3 -> 3 -> 3 -> 3 -> 5 -> 7
-import { generateLinkedList, Node, createNode } from "./utils";
+import { generateLinkedList, Node, createNode } from "../utils";
 
 const linkedList1 = generateLinkedList(5);
 const linkedList2 = generateLinkedList(3);
