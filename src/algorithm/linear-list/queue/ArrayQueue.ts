@@ -4,7 +4,7 @@ class ArrayQueue<T> implements IQueue<T> {
   enqueue(element: T) {
     this.queue.push(element);
   }
-  dequeue(): T {
+  dequeue(): T | undefined {
     return this.queue.shift();
   }
   peek(): T {
