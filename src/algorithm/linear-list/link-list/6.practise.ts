@@ -5,7 +5,9 @@
 // 输入: 1->1->2->3->3
 // 输出: 1->2->3
 
-const l1 = {
+import { INode } from "../type";
+
+const l1:INode<number> = {
   value: 1,
   next: {
     value: 2,
@@ -22,7 +24,7 @@ const l1 = {
   }
 }
 
-const deduplicationLink = (link) => {
+const deduplicationLink = (link: INode<number> | null) => {
   const res = link;
   let i = 0
   while(link && link.next) {
