@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" />
+
+    <script>
+      // 假设有一个文件输入框
+      let fileInput = document.querySelector('input[type="file"]');
+      fileInput.addEventListener("change", function (event) {
+        let file = event.target.files[0];
+        let reader = new FileReader();
+
+        reader.onload = function (e) {
+          let arrayBuffer = e.target.result; // 获取文件的 ArrayBuffer
+          console.log(arrayBuffer);
+        };
+
+        reader.readAsArrayBuffer(file); // 以 ArrayBuffer 形式读取文件
+      });
+    </script>
+  </body>
+</html>
