@@ -13,7 +13,7 @@ class ArrayStack<T> implements IStack<T> {
 
   /** 移除栈顶元素，并返回被移除的元素 */
   pop() {
-    return this.data.pop() || null;
+    return this.data.pop() ?? null;
   }
 
   /** 返回栈顶元素，不对栈做任何修改 */
