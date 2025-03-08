@@ -21,11 +21,11 @@ class Queue {
   // 入队操作
   enqueue(value: number) {
     const node = new Node(value);
-    if (this.head === null || this.tail === null) {
+    if (!this.head) {
       this.head = node;
       this.tail = node;
     } else {
-      this.tail.next = node;
+      this.tail!.next = node;
       this.tail = node;
     }
     this._size++;
@@ -34,9 +34,8 @@ class Queue {
   // 出队操作
   dequeue() {
     const result = this.head;
-    if (this.head === null) {
-      return result;
-    } else if (this.head === this.tail) {
+    if (this.head === null) return result;
+    if (this.head === this.tail) {
       this.head = null;
       this.tail = null;
     } else {
