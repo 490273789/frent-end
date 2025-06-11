@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="myDiv">
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
+    <button id="addItem">Add Item</button>
+    <button id="removeItem">Remove Item</button>
+    <button id="changeAttribute">Change Attribute</button>
+    <script>
+      const li = document.getElementById("myDiv");
+      const addItemButton = document.getElementById("addItem");
+      const removeItemButton = document.getElementById("removeItem");
+      const changeAttributeButton = document.getElementById("changeAttribute");
+
+      addItemButton.addEventListener("click", () => {
+        const newItem = document.createElement("li");
+        newItem.textContent = "New Item";
+        li.appendChild(newItem);
+      });
+
+      removeItemButton.addEventListener("click", () => {
+        if (li.lastChild) {
+          li.removeChild(li.lastChild);
+        }
+      });
+
+      changeAttributeButton.addEventListener("click", () => {
+        li.setAttribute("data-changed", "true");
+      });
+    </script>
+    <script>
+      // Subject
+      const ul = document.getElementById("myDiv");
+
+      // intersectionObserver 和 MutationObserver 都是观察者模式的实现方式，用于异步监听
+      // intersectionObserver 主要用于监听元素的可见性变化
+      // MutationObserver 主要用于监听 DOM 变更
+
+      // Observer
+      // mutations 一个数组，数组中的每一项都是一个 MutationRecord 对象（被监听额DOM对象）
+      const observer = new MutationObserver((mutations, observer) => {
+        console.log("records:", mutations, "observer:", observer);
+        mutations.forEach((mutation) => {
+          console.log("Mutation observed:", mutation);
+          // type 属性表示变更的类型
+          // childList 表示子节点的变化
+          // attributes 表示属性的变化
+          // characterData 表示文本内容的变化
+          // addedNodes 表示新增的节点
+          // removedNodes 表示被删除的节点
+          // attributeName 表示被修改的属性名称
+          if (mutation.type === "childList") {
+            console.log("Child nodes changed:", mutation.addedNodes, mutation.removedNodes);
+          } else if (mutation.type === "attributes") {
+            console.log(
+              "Attribute changed:",
+              mutation.attributeName,
+              "Old value:",
+              mutation.oldValue,
+            );
+          } else if (mutation.type === "characterData") {
+            console.log("Character data changed:", mutation.target.textContent);
+          }
+        });
+      });
+
+      observer.observe(ul, {
+        attributes: true, // 监听属性变化
+        attributeOldValue: true, // 变化之后记录旧的属性值
+        childList: true, // 监听子节点变化（增加删除）
+        characterData: true, // 监听节点内容或文本变化
+        subtree: true, // 递归监听下级所有节点
+      });
+    </script>
+  </body>
+</html>

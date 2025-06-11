@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="myDiv">Click me!</div>
+    <script>
+      // Subject
+      const div = document.getElementById("myDiv");
+
+      // Observer
+      const handleClick = (event) => {
+        alert("Div clicked!", event);
+      };
+
+      // Attach the observer to the subject
+      div.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>
