@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,9 +7,40 @@
     <style>
       .item {
         width: 40px;
-        height: 15px;
+        padding: 5px 8px;
+        border-radius: 4px;
+        margin: 5px;
         cursor: pointer;
-        background-color: #9966ff;
+      }
+      .color1 {
+        background-color: #ff6666;
+      }
+      .color10 {
+        background-color: #ffcc66;
+      }
+      .color2 {
+        background-color: #66ff66;
+      }
+      .color3 {
+        background-color: #66ccff;
+      }
+      .color4 {
+        background-color: #ff66cc;
+      }
+      .color5 {
+        background-color: #cc66ff;
+      }
+      .color6 {
+        background-color: #ff66cc;
+      }
+      .color7 {
+        background-color: #66ccff;
+      }
+      .color8 {
+        background-color: #ffcc66;
+      }
+      .color9 {
+        background-color: #66ffcc;
       }
       .margin {
         margin-bottom: 100px;
@@ -20,53 +51,143 @@
         border: 1px solid #333;
       }
 
-      thead,
+      thead td:not(:first-child),
       tfoot {
         background-color: #333;
         color: #fff;
       }
+
+      #container {
+        display: flex;
+        width: 100%;
+        height: 600px;
+      }
+      .right {
+        flex: 1;
+        border: #333 solid 1px;
+      }
+      .left {
+        border: #333 solid 1px;
+      }
+      .span {
+        height: 150px;
+      }
     </style>
   </head>
   <body>
+    <h1>课程表</h1>
     <div id="container">
-      <div draggable="true" class="item"></div>
-
-      <div class="margin"></div>
-      <table droppable="true">
-        <thead>
-          <tr>
-            <th>星期1</th>
-            <th>星期2</th>
-            <th>星期3</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>语文</td>
-            <td>数学</td>
-            <td>英语</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="left" data-drop="move">
+        <div data-effect="copy" draggable="true" class="color1 item">语文</div>
+        <div data-effect="copy" draggable="true" class="color2 item">数学</div>
+        <div data-effect="copy" draggable="true" class="color3 item">英语</div>
+        <div data-effect="copy" draggable="true" class="color4 item">物理</div>
+        <div data-effect="copy" draggable="true" class="color5 item">化学</div>
+        <div data-effect="copy" draggable="true" class="color6 item">生物</div>
+        <div data-effect="copy" draggable="true" class="color7 item">地理</div>
+        <div data-effect="copy" draggable="true" class="color8 item">历史</div>
+        <div data-effect="copy" draggable="true" class="color9 item">政治</div>
+        <div data-effect="copy" draggable="true" class="color10 item">体育</div>
+      </div>
+      <div class="right">
+        <table droppable="true">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <td></td>
+              <td>星期一</td>
+              <td>星期二</td>
+              <td>星期三</td>
+              <td>星期四</td>
+              <td>星期五</td>
+              <td>星期六</td>
+              <td>星期日</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="4" class="span">上午</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <script>
+      // 使用事件委托，获取父容器的元素
       const container = document.querySelector("#container");
 
+      // 监听元素开始拖拽事件
       container.ondragstart = (e) => {
-        e.dataTransfer.effectAllowed = "copy";
+        e.dataTransfer.effectAllowed = e.target.data - effect;
         console.log("start", e.target);
       };
 
+      // 拖动到目标元素上
       container.ondragover = (e) => {
+        // 很多元素默认情况下是不支持其他元素放入的，所以不会触发ondrop这个事件
+        // 在over中加入preventDefault()，就可以触发ondrop事件
         e.preventDefault();
+        // 打印的时候目标元素，而不是当前拖拽的元素
         // console.log("over", e.target);
       };
 
+      // 当拖拽元素进入到某个元素后打印
       container.ondragenter = (e) => {
+        e.target.classList.add("active");
         console.log("enter", e.target);
       };
+      // 当拖拽元素离开某个元素后打印
+      container.ondragleave = (e) => {
+        e.target.classList.remove("active");
+        console.log("leave", e.target);
+      };
 
+      // 当拖拽元素放手后出发，很多元素默认情况下是不支持其他元素放入的，所以不会触发这个事件
       container.ondrop = (e) => {
         console.log("ondrop", e.target);
       };
