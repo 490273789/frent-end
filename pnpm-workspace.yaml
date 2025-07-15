@@ -1,0 +1,6 @@
+packages:
+  - "typescript/*"
+  - "htmlAndCss/*"
+  - "design-pattern/*"
+  - "algorithm/*"
+  - "nodejs/*"
