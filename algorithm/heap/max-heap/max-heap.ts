@@ -62,9 +62,7 @@ class MaxHeap {
       const parentIndex = this.#getParentIndex(index);
 
       // 如果当前节点小于等于父节点，则堆已经满足性质
-      if (this.#heap[index] <= this.#heap[parentIndex]) {
-        break;
-      }
+      if (this.#heap[index] <= this.#heap[parentIndex]) break;
 
       // 交换当前节点与父节点
       this.#swap(index, parentIndex);
@@ -89,9 +87,7 @@ class MaxHeap {
       }
 
       // 如果当前节点大于等于较大的子节点，则堆已经满足性质
-      if (this.#heap[index] >= this.#heap[largerChildIndex]) {
-        break;
-      }
+      if (this.#heap[index] >= this.#heap[largerChildIndex]) break;
 
       // 交换当前节点与较大的子节点
       this.#swap(index, largerChildIndex);
@@ -169,7 +165,7 @@ class MaxHeap {
    */
   #buildHeap(): void {
     // 从最后一个非叶子节点开始，向上进行堆化
-    for (let i = Math.floor(this.#heap.length / 2) - 1; i >= 0; i--) {
+    for (let i = (this.#heap.length >> 1) - 1; i >= 0; i--) {
       this.#heapifyDown(i);
     }
   }
