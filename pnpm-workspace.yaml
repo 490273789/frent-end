@@ -1,6 +1,9 @@
 packages:
-  - "typescript/*"
-  - "htmlAndCss/*"
-  - "design-pattern/*"
-  - "algorithm/*"
-  - "nodejs/*"
+  - typescript/*
+  - htmlAndCss/*
+  - design-pattern/*
+  - algorithm/*
+  - nodejs/*
+
+onlyBuiltDependencies:
+  - esbuild
